@@ -1,0 +1,28 @@
+{
+  "name": "@ai-auditor/api",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "echo 'No linting configured for api'",
+    "dev": "node --import tsx src/server.ts",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "@ai-auditor/ai": "workspace:*",
+    "@ai-auditor/audit": "workspace:*",
+    "@ai-auditor/shared": "workspace:*",
+    "@ai-auditor/website-tool": "workspace:*",
+    "@hono/node-server": "^1.13.8",
+    "dotenv": "^16.4.7",
+    "hono": "^4.7.2",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "typescript": "^5.7.3"
+  }
+}

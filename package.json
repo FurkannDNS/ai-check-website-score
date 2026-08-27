@@ -1,0 +1,29 @@
+﻿{
+  "name": "ai-website-auditor-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "dev:api": "pnpm --filter @ai-auditor/api dev",
+    "dev:demo": "node apps/demo-site/server.js",
+    "demo": "node apps/demo-site/server.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "audit": "node --import tsx packages/audit/src/cli.ts",
+    "audit:ai": "node --import tsx packages/audit/src/cli.ts --ai",
+    "analyze": "node --import tsx packages/audit/src/cli.ts",
+    "analyze:ai": "node --import tsx packages/audit/src/cli.ts --ai"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3",
+    "turbo": "^2.4.4",
+    "vitest": "^3.0.7"
+  },
+  "packageManager": "pnpm@11.10.0"
+}
