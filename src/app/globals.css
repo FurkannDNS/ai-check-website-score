@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #060913;
+  --foreground: #f1f5f9;
+  --card-bg: rgba(15, 23, 42, 0.65);
+  --card-border: rgba(56, 189, 248, 0.15);
+  --cyan-glow: #00e5ff;
+  --blue-accent: #0070f3;
+  --pedestal-dark: #0b1120;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-brand-cyan: #00e5ff;
+  --color-brand-blue: #0070f3;
+  --color-brand-dark: #060913;
+  --color-brand-navy: #0b1222;
+  --color-brand-card: #0f172a;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #060913;
+  color: #f1f5f9;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+  selection-background-color: #00e5ff;
+  selection-color: #060913;
+}
+
+/* Custom glowing effects and glassmorphism */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.18);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(0, 229, 255, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(0, 229, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.cyan-glow-text {
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.6), 0 0 40px rgba(0, 229, 255, 0.3);
+}
+
+.cyan-glow-box {
+  box-shadow: 0 0 35px -5px rgba(0, 229, 255, 0.35);
+}
+
+.cyan-border-glow {
+  box-shadow: inset 0 0 15px rgba(0, 229, 255, 0.2), 0 0 20px rgba(0, 229, 255, 0.25);
+}
+
+/* 3D Medal / Badge ambient glow effects */
+.badge-neon-ring {
+  box-shadow: 0 0 30px 4px rgba(0, 229, 255, 0.5), inset 0 0 20px 2px rgba(0, 229, 255, 0.3);
+}
+
+.pedestal-glow {
+  background: radial-gradient(ellipse at center, rgba(0, 229, 255, 0.28) 0%, rgba(0, 112, 243, 0.12) 45%, transparent 70%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #060913;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00e5ff;
 }
